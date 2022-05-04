@@ -17,6 +17,7 @@ class Deepsortor:
 
         # Pass detections to deepsort
         outputs = self.deepsort.update(xywhs, confss, image)
+
         for value in list(outputs):
             x1, y1, x2, y2, track_id = value
             bboxes2draw.append(

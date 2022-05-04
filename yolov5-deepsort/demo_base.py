@@ -24,18 +24,17 @@ def main():
         result = det.update(frame)
         result = result['frame']
         result = imutils.resize(result, height=500)
-        if videoWriter is None:
-            fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')  # opencv3.0
-            videoWriter = cv2.VideoWriter(RESULT_PATH, fourcc, fps, (result.shape[1], result.shape[0]))
-
-        videoWriter.write(result)
+        # if videoWriter is None:
+        #     fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')  # opencv3.0
+        #     videoWriter = cv2.VideoWriter(RESULT_PATH, fourcc, fps, (result.shape[1], result.shape[0]))
+        # videoWriter.write(result)
 
         cv2.imshow("frame", result)
         key = cv2.waitKey(t)
         if key == ord('q'): break
 
     cv2.destroyAllWindows()
-    videoWriter.release()
+    # videoWriter.release()
     cap.release()
 
 if __name__ == '__main__':

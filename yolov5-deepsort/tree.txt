@@ -18,7 +18,7 @@
 │  │  │  ├─linear_assignment.py #分配算法代码
 │  │  │  ├─nn_matching.py #最近邻距离计算代码
 │  │  │  ├─preprocessing.py #非极大抑制代码
-│  │  │  ├─track.py #Track类定义代码
+│  │  │  ├─track.py #Track类定义代码，存储轨迹星系，其中包含轨迹狂位置和速度，
 │  │  │  └─tracker.py #Tracker类定义代码
 │  │  └─deepsort.py #DeepSORT类定义代码
 │  └─utils #deepsort辅助工具代码

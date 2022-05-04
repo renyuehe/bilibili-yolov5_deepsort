@@ -9,12 +9,10 @@ def plot_bboxes(image, bboxes, line_thickness=None):
     point_radius = 4
 
     for (x1, y1, x2, y2, cls_id, pos_id) in bboxes:
-        if cls_id in ['smoke', 'phone', 'eat']:
+        if cls_id in ['car', 'bus', 'truck']:
             color = (0, 0, 255)
         else:
             color = (0, 255, 255)
-        if cls_id == 'eat':
-            cls_id = 'eat-drink'
 
         # check whether hit line
         check_point_x = x1
@@ -23,7 +21,7 @@ def plot_bboxes(image, bboxes, line_thickness=None):
         c1, c2 = (x1, y1), (x2, y2)
         cv2.rectangle(image, c1, c2, color, thickness=tl, lineType=cv2.LINE_AA)
         tf = max(tl - 1, 1)  # font thickness
-        cv2.putText(image, '{} id:{}'.format(cls_id, pos_id), (c1[0], c1[1] - 2), 0, tl / 3,
+        cv2.putText(image, '{}id:{}'.format(cls_id, pos_id), (c1[0], c1[1] - 2), 0, tl / 3,
                     [225, 255, 255], thickness=tf, lineType=cv2.LINE_AA)
 
         list_pts.append([check_point_x - point_radius, check_point_y - point_radius])

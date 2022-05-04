@@ -7,9 +7,6 @@ class Shell(object):
     def __init__(self, deepsort_config_path, yolo_weight_path):
         self.deepsortor = Deepsortor(configFile=deepsort_config_path)
         self.detector = Detector(yolo_weight_path, imgSize=640, threshould=0.3, stride=1)
-        self.build_config()
-
-    def build_config(self):
         self.frameCounter = 0
 
     def update(self, im):
