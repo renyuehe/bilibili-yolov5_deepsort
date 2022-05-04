@@ -1,12 +1,12 @@
 import os
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 
-from shells.detector import Shell
+from shells.shell import Shell
 import imutils
 import cv2
 
 VIDEO_PATH = './video/traffic.mp4'
-RESULT_PATH = 'result.mp4'
+RESULT_PATH = './out/result.mp4'
 
 DEEPSORT_CONFIG_PATH = "./deep_sort/configs/deep_sort.yaml"
 YOLOV5_WEIGHT_PATH = './weights/yolov5m.pt'

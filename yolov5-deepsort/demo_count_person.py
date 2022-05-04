@@ -3,7 +3,7 @@ os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 import numpy as np
 import cv2
 
-from shells.detector import Shell
+from shells.shell import Shell
 VIDEO_PATH = './video/pedestrian.mp4'
 
 if __name__ == '__main__':
