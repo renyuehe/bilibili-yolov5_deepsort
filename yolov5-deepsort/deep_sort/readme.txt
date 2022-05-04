@@ -41,7 +41,7 @@
 
 	linear_assignment.py：利用匈牙利算法匹配预测的轨迹框和检测框最佳匹配效果。
 
-	nn_matching.py：通过计算欧氏距离、余弦距离等距离来计算最近领距离。
+	nn_matching.py：通过计算欧氏距离、余弦距离等距离来计算最近邻距离。
 
 	preprocessing.py：非极大抑制代码，利用非极大抑制算法将最优的检测框输出。
 
