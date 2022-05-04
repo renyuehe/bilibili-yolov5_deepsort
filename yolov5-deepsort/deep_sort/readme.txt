@@ -49,12 +49,6 @@
 
 	tracker.py：保存了所有的轨迹信息，负责初始化第一帧，卡尔曼滤波的预测和更新，负责级联匹配,IOU匹配。
 
-	deep_sort/deep_sort/deep_sort.py：deepsort的整体封装，实现一个deepsort追踪的一个整体效果。
+2.4 deep_sort/utils：这里最主要有一些各种各样的工具python代码，例如画框工具，日志保存工具等等。
 
-	deep_sort/utils：这里最主要有一些各种各样的工具python代码，例如画框工具，日志保存工具等等。
-
-	demo.py：针对读取的视频进行目标追踪
-
-	objdetector.py：封装的一个目标检测器，对视频中的物体进行检测
-
-	objtracker.py：封装了一个目标追踪器，对检测的物体进行追踪
+2.5 deep_sort/deep_sort/deep_sort.py：deepsort的整体封装，实现一个deepsort追踪的一个整体效果。
