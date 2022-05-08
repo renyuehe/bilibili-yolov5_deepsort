@@ -6,6 +6,7 @@ import imutils
 import cv2
 
 VIDEO_PATH = './video/traffic.mp4'
+# VIDEO_PATH = './video/pedestrian.mp4'
 RESULT_PATH = './out/result.mp4'
 
 DEEPSORT_CONFIG_PATH = "./deep_sort/configs/deep_sort.yaml"

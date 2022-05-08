@@ -2,6 +2,7 @@ import torch
 
 from shells.deepsortor import Deepsortor
 from shells.detector import Detector
+from shells import tools
 
 class Shell(object):
     def __init__(self, deepsort_config_path, yolo_weight_path):
@@ -18,10 +19,11 @@ class Shell(object):
 
         self.frameCounter += 1
 
+        # yolov5
         _, bboxes = self.detector.detect(im)
         bbox_xywh = []
         confs = []
-        bboxes2draw = []
+
         if len(bboxes):
             # Adapt detections to deep sort input format
             for x1, y1, x2, y2, _, conf in bboxes:
@@ -34,10 +36,12 @@ class Shell(object):
             xywhs = torch.Tensor(bbox_xywh)
             confss = torch.Tensor(confs)
 
-            im, obj_bboxes = self.deepsortor.update(xywhs, confss, im, bboxes2draw)
+            im, obj_bboxes = self.deepsortor.update(xywhs, confss, im)
 
+            # 绘制 deepsort 结果
+            image = tools.plot_bboxes(im, obj_bboxes)
 
-            retDict['frame'] = im
+            retDict['frame'] = image
             retDict['obj_bboxes'] = obj_bboxes
 
         return retDict

@@ -1,6 +1,5 @@
 from deep_sort.utils.parser import get_config
 from deep_sort.deep_sort import DeepSort
-from shells import tools
 
 class Deepsortor:
     def __init__(self, configFile):
@@ -13,8 +12,8 @@ class Deepsortor:
                             max_age=cfg.DEEPSORT.MAX_AGE, n_init=cfg.DEEPSORT.N_INIT, nn_budget=cfg.DEEPSORT.NN_BUDGET,
                             use_cuda=True)
 
-    def update(self, xywhs, confss, image, bboxes2draw):
-
+    def update(self, xywhs, confss, image):
+        bboxes2draw = []
         # Pass detections to deepsort
         outputs = self.deepsort.update(xywhs, confss, image)
 
@@ -23,5 +22,5 @@ class Deepsortor:
             bboxes2draw.append(
                 (x1, y1, x2, y2, '', track_id)
             )
-        image = tools.plot_bboxes(image, bboxes2draw)
+
         return image, bboxes2draw

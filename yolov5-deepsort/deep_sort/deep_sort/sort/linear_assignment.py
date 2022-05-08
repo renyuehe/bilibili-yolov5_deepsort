@@ -234,7 +234,6 @@ def gate_cost_matrix(
     for row, track_idx in enumerate(track_indices):
         track = tracks[track_idx]
         #KalmanFilter.gating_distance 计算状态分布和测量之间的选通距离
-        gating_distance = kf.gating_distance(
-            track.mean, track.covariance, measurements, only_position)
+        gating_distance = kf.gating_distance(track.mean, track.covariance, measurements, only_position)
         cost_matrix[row, gating_distance > gating_threshold] = gated_cost
     return cost_matrix
